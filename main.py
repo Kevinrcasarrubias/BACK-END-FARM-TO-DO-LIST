@@ -5,7 +5,6 @@ from decouple import config
 
 app = FastAPI()
 
-print(config("FRONTEND_URL"))
 
 origins = [
   config("FRONTEND_URL")
