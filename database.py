@@ -1,9 +1,10 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from models import Task, UpdateTask
 from bson import ObjectId
+from decouple import config
 
-
-client = AsyncIOMotorClient("mongodb://localhost")
+print(config("MONGODB_URI"))
+client = AsyncIOMotorClient(config("MONGODB_URI"))
 database = client.taskdatabase
 collection = database.tasks
 
